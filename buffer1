@@ -1,0 +1,28 @@
+`timescale 1ns/1ns
+//1.Creacion del modulo 
+//Declaracion del modulo con sus entradas y salidas 
+//Definir constante E de 32 
+module buffer1
+	(
+	input clk,
+	input [31:0] inputAdd,
+  input [31:0] inputInsMem,
+	output [31:0] outputAdd,
+  output [31:0] OutputInsMem
+	);
+//declaracion de señales y variables 
+	//NA
+//2.Declaraciones
+	//N/A
+//3.Cuerpo del modulo--------
+// asignaciones
+	//NA	
+//instancias
+	//N/A
+//Bloques always 
+	always @(posedge clk)
+		begin
+		  outputAdd = inputAdd;
+      outputInsMem = inputInsMem;
+		end
+endmodule
