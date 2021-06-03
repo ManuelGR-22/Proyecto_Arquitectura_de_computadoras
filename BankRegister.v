@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
-
+//1.Creacion del modulo 
 module BankReg(
-	input[4:0] AR1, //Read Register 1
+input[4:0] AR1, //Read Register 1
 	input[4:0] AR2, //Read Register 2
 	input[4:0] AW,  
 	input REG_WRITE, //RegWrite
@@ -9,19 +9,14 @@ module BankReg(
 	output reg [31:0] DR1, //Read data 1
 	output reg [31:0] DR2  //Read data 2
 );
+reg [31:0] memory [0:31];
+initial $readmemb("TestF1_BReg.txt",memory);
 
-reg [31:0] memoria [0:31];
-
-initial begin
-	$readmemb("TestF1_BReg.mem", memoria);
+always @*
+begin
+//Antes de leer escribir a eso se refiere
+	if(REG_WRITE) memory[AW] <= DATAIN;
+	DR1 <= memory[AR1];
+	DR2 <= memory[AR2];
 end
-
-always @* begin
-		DR1 = memoria[AR1];
-		DR2 = memoria[AR2];
-
-	if (REG_WRITE) memoria[AW] <= DATAIN;
-		
-end
-
 endmodule
