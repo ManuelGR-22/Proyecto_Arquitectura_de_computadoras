@@ -19,6 +19,36 @@ module unit_control(
 				RegDst = 1;
 				ALUOP = 3'b010;
 			end
+			6'b000000: begin //lw
+				MemREG = 1;
+				RegWRITE = 1;
+				MemWRITE = 0;
+				Branch = 0;
+				MemRead = 1;
+				ALUSrc = 1;
+				RegDst = 0;
+				ALUOP = 3'b010;
+			end
+			6'b000000: begin //sw
+				MemREG = 1'bx;
+				RegWRITE = 0;
+				MemWRITE = 1;
+				Branch = 0;
+				MemRead = 0;
+				ALUSrc = 1;
+				RegDst = 1'bx;
+				ALUOP = 3'b010;
+			end	
+			6'b000000: begin //beq
+				MemREG = 1'bx;
+				RegWRITE = 0;
+				MemWRITE = 0;
+				Branch = 1;
+				MemRead = 0;
+				ALUSrc = 0;
+				RegDst = 1'bx;
+				ALUOP = 3'b010;
+			end
 			default:
 			begin
 				MemREG = 1'bx;
