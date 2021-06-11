@@ -12,6 +12,10 @@ initial
 
 always@(posedge clk)
     begin
-    	pc = X;          
+        if(X)
+    	pc = X;
+        else begin
+                      pc = 0;
+                  end          
     end
 endmodule
