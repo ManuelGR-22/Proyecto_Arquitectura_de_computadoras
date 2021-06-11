@@ -7,13 +7,12 @@ singledptR datapath(clk);
 
 always
 
-	#100 clk = ~ clk;
+	#50 clk = ~ clk;
 
 initial
 begin
-	#10
 	clk <= 0;
-	#1200
+	#50000
 	$stop;
 
 end
