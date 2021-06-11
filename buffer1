@@ -6,7 +6,7 @@ module buffer1
 	input clk,
 	input [31:0] inputAdd,
   	input [31:0] inputInsMem,
-	output reg[31:0] outputAdd,
+	output reg [31:0] outputAdd,
   	output reg [31:0] OutputInsMem
 	);
 //declaracion de señales y variables 
@@ -20,8 +20,8 @@ module buffer1
 	//N/A
 //Bloques always 
 	always @(posedge clk)
-		begin
-		  outputAdd = inputAdd;
-      outputInsMem = inputInsMem;
-		end
+	begin
+		outputAdd = inputAdd;
+		OutputInsMem = inputInsMem;
+	end
 endmodule
