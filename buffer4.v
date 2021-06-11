@@ -3,32 +3,32 @@
 //Declaracion del modulo con sus entradas y salidas 
 module buffer4
 	(
+	//UNIDAD DE CONTROL
+	//ENTRADAS
+	//WB
+	input INB4MemREG,
+	input INB4RegWRITE,
+	//RESTO
 	input clk,
 	input [31:0] inputDatmem,
-  	input [31:0] inputAddrst,
-	input [31:0] inputmux,
+  	input [31:0] inputAddrstB4,
+	input [4:0] inputmuxB4,
+	//UNIDAD DE CONTROL
+	//SALIDAS
+	//WB
+	output reg OTB4MemREG,
+	output reg OTB4RegWRITE,
+	//RESTO
 	output reg [31:0] outputDatmem,
-	output reg [31:0] outputAddrst,
-	output reg [31:0] outputmux
-	
+	output reg [31:0] outputAddrstB4,
+	output reg [4:0] outputmuxB4
 	);
-//declaracion de señales y variables 
-	//NA
-//2.Declaraciones
-	//N/A
-//3.Cuerpo del modulo--------
-// asignaciones
-	//NA	
-//instancias
-	//N/A
-//Bloques always 
-/*Deteccion de flanco: sirve para que un proceso solo se ejecute 
-en determinados flancos de reloj de una o mas señales de entrada*/
-//posedge detecta el flanco de subida
 	always @(posedge clk)
 	begin
+		OTB4MemREG = INB4MemREG;
+		OTB4RegWRITE = INB4RegWRITE;
 		outputDatmem = inputDatmem;
-		outputAddrst = inputAddrst;
-		outputmux = inputmux;
+		outputAddrstB4 = inputAddrstB4;
+		outputmuxB4 = inputmuxB4;
 	end
 endmodule
