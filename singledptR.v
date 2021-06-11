@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module DatapathX(
+module singledptR(
 	input clk
 
 );
