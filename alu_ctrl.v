@@ -26,4 +26,4 @@ module alu_ctrl(
 			3'b011: OP = 3'd3; //ori...
 		endcase
 	end
-endmodule			
+endmodule
