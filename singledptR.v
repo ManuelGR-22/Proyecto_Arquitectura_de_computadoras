@@ -131,4 +131,3 @@ module singledptR(
 	signextend sign(OutputInsMem[15:0],inputSinex);
 
 endmodule
-
