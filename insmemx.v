@@ -16,4 +16,3 @@ begin
 	instruction = {insMemory[Dir], insMemory[Dir+1], insMemory[Dir+2], insMemory[Dir+3]};
 end
 endmodule
-
