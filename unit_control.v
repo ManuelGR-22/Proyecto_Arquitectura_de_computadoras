@@ -56,7 +56,7 @@ module unit_control(
 				Branch = 0;
 				MemRead = 0;
 				ALUSrc = 1; //1 TIPO I
-				RegDst = 1;
+				RegDst = 0;
 				ALUOP = 3'b000; //dependende de cada op
 			end
 			6'b001100: begin //ANDI
@@ -66,7 +66,7 @@ module unit_control(
 				Branch = 0;
 				MemRead = 0;
 				ALUSrc = 1; //1 TIPO I
-				RegDst = 1;
+				RegDst = 0;
 				ALUOP = 3'b100; //dependende de cada op
 			end
 			6'b001101: begin //ORI
@@ -76,7 +76,7 @@ module unit_control(
 				Branch = 0;
 				MemRead = 0;
 				ALUSrc = 1; //1 TIPO I
-				RegDst = 1;
+				RegDst = 0;
 				ALUOP = 3'b011; //dependende de cada op
 			end
 			6'b001010: begin //SLTI
@@ -86,7 +86,7 @@ module unit_control(
 				Branch = 0;
 				MemRead = 0;
 				ALUSrc = 1; //1 TIPO I
-				RegDst = 1;
+				RegDst = 0;
 				ALUOP = 3'b001; //dependende de cada op
 			end
 			default:
