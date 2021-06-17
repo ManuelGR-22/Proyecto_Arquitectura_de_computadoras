@@ -12,7 +12,7 @@ always
 initial
 begin
 	clk <= 0;
-	#50000
+	#7500
 	$stop;
 
 end
